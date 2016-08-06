@@ -7,6 +7,9 @@ from django.utils.decorators import method_decorator
 
 # Create your views here.
 
+PAGE_ACCESS_TOKEN = 'EAAYgQ8PcnXcBAMoZC2E1QWAem7VOc7VLvUsTNNHCNx2seOF5CFoMYkodiPk7jgW98ALPIkx8Q8h46joQh93A4EEIs5dmvQXvERRUIMKZCbbna73yGvvusB9tryP5B17TKXXgaajBTDVgZB8r1a4M2qAuaJ9NqkkuHA3ZCHDtZCQZDZD'
+
+
 def post_facebook_message(fbid, recevied_message):
     # Remove all punctuations, lower case the text and split it based on space
     #clean_message = re.sub(r"[^a-zA-Z0-9\s]",' ',recevied_message)
