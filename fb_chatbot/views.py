@@ -1,3 +1,6 @@
+import json, requests, random, re
+from pprint import pprint
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
