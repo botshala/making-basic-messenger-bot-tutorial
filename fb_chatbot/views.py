@@ -10,7 +10,7 @@ from django.utils.decorators import method_decorator
 class MyQuoteBotView(generic.View):
     def get(self, request, *args, **kwargs):
             try:
-                if self.request.GET['hub.verify_token'] == '8447789934':
+                if self.request.GET['hub.verify_token'] == '8447789934m':
                     return HttpResponse(self.request.GET['hub.challenge'])
                 else:
                     return HttpResponse('Error, invalid token')
