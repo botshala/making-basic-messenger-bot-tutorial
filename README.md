@@ -50,3 +50,4 @@ heroku logs -t
 ```
 10) FAQs
 + `sudo pip install requests`
++ `heroku config:set DISABLE_COLLECTSTATIC=1`
