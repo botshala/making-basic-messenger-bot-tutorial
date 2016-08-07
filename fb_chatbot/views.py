@@ -69,7 +69,7 @@ def quote_search(str_var):
         if str_var in quote_author.lower():
             return quote_text
 
-    return return_random_quote()
+    return return_random_quote()[0]
 
 
 def post_facebook_message(fbid, recevied_message):
@@ -147,7 +147,7 @@ class MyQuoteBotView(generic.View):
 
 def index(request):
     print quote_search('z123io90')
-    return HttpResponse("Hello World")
+    return HttpResponse("Hello World" + quote_search('*'))
 
 def test():
     post_facebook_message('abhishek.sukumar.1','test message')
