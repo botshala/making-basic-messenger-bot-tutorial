@@ -52,3 +52,4 @@ heroku logs -t
 + `sudo pip install requests`
 + `heroku config:set DISABLE_COLLECTSTATIC=1`
 + `heroku git:remote -a {{YOUR heroku_app_id}}`
++ `heroku ps:scale web=0`
