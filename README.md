@@ -48,3 +48,7 @@ heroku ps:scale web=1
 #now see the logs, to check whether the error still persists
 heroku logs -t
 ```
+10) FAQs
++ `sudo pip install requests`
++ `heroku config:set DISABLE_COLLECTSTATIC=1`
++ `heroku git:remote -a {{YOUR heroku_app_id}}`
