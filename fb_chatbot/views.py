@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import json, requests, random, re
 from pprint import pprint
 
@@ -37,6 +40,10 @@ quotes_arr = [["Life isn’t about getting and having, it’s about giving and b
 ["Winning isn’t everything, but wanting to win is.", "Vince Lombardi"]
 ["I am not a product of my circumstances. I am a product of my decisions.", "Stephen Covey"]
 ["Every child is an artist.  The problem is how to remain an artist once he grows up.", "Pablo Picasso"]]
+
+
+def return_random_quote():
+    return random.shuffle(quotes_arr)[0]
 
 
 def post_facebook_message(fbid, recevied_message):
@@ -105,7 +112,8 @@ class MyQuoteBotView(generic.View):
 
 
 def index(request):
-    print test()
+    print return_random_quote()
+
     return HttpResponse("Hello World")
 
 def test():
