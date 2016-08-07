@@ -48,3 +48,5 @@ heroku ps:scale web=1
 #now see the logs, to check whether the error still persists
 heroku logs -t
 ```
+10) FAQs
++ `sudo pip install requests`
