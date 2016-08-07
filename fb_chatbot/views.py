@@ -38,6 +38,9 @@ def post_facebook_message(fbid, recevied_message):
     except:
         joke_text = 'Yo ' + reply_text
 
+    random_quote = return_random_quote()
+    joke_text = random_quote[0]
+
     message_object = {
         "attachment":{
           "type":"image",
