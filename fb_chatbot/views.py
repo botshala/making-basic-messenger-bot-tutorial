@@ -25,10 +25,18 @@ def post_facebook_message(fbid, recevied_message):
     except:
         joke_text = 'Yo ' + reply_text
 
-    
+    message_object = {
+        "attachment":{
+          "type":"image",
+          "payload":{
+            "url":"http://downloadpack.net/skin_pack/ironman/ironman.png"
+          }
+        }
+    }
                    
     post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%PAGE_ACCESS_TOKEN
-    response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":joke_text}})
+    #response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":joke_text}})
+    response_msg = json.dumps({"recipient":{"id":fbid}, message_object})
     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     pprint(status.json())
 
