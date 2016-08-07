@@ -96,6 +96,17 @@ def post_facebook_message(fbid, recevied_message):
         }
     }
 
+    message_object3 = {
+        "message":{
+            "attachment":{
+                "type":"image",
+                "payload":{
+                    "url":"http://worldversus.com/img/ironman.jpg"
+                }
+            }
+        }
+    }
+
     message_object2 = {
         "text": joke_text
         }
@@ -104,10 +115,20 @@ def post_facebook_message(fbid, recevied_message):
     response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":joke_text}})
     response_msg2 = json.dumps({"recipient":{"id":fbid}, "message":{"text":response_text}})
     
-    response_msg3 = json.dumps({"recipient":{"id":fbid}, "message": message_object})
+    response_msg3 = json.dumps(
+        {"recipient":{"id":fbid}, 
+            "message":{
+                "attachment":{
+                    "type":"image",
+                    "payload":{
+                        "url":"http://worldversus.com/img/ironman.jpg"
+                    }
+                }
+            }
+     })
     
     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
-    #status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg2)
+    status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg3)
     
     pprint(status.json())
 
