@@ -37,3 +37,14 @@ heroku logs -t
 ![alt text](http://g.recordit.co/3Hz6sZlKRs.gif "fb dashboard gif")
 
 8) Send a message to your page, and view the logs `heroku logs -t` to debug any errors
+
+9) make changes to your code and re-deploy it on heroku as follows
+```
+git add .
+git commit -m 'made some changes'
+git push heroku master
+#now re-run it on heroku
+heroku ps:scale web=1
+#now see the logs, to check whether the error still persists
+heroku logs -t
+```
