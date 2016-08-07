@@ -83,7 +83,7 @@ def post_facebook_message(fbid, recevied_message):
     except:
         joke_text = 'Yo ' + reply_text
 
-    joke_text = quote_text(recevied_message)
+    joke_text = quote_search(recevied_message)
     response_text = recevied_message +' :)'
 
     message_object = {
@@ -146,6 +146,7 @@ class MyQuoteBotView(generic.View):
 
 
 def index(request):
+    print test()
     print quote_search('z123io90')
     return HttpResponse("Hello World" + quote_search('*'))
 
