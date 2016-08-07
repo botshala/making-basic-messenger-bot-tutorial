@@ -83,7 +83,8 @@ def post_facebook_message(fbid, recevied_message):
     except:
         joke_text = 'Yo ' + reply_text
 
-    joke_text = quote_text(recevied_message)
+    #joke_text = quote_text(recevied_message)
+    joke_text = recevied_message +' :)'
 
     message_object = {
         "attachment":{
@@ -104,7 +105,7 @@ def post_facebook_message(fbid, recevied_message):
     response_msg2 = json.dumps({"recipient":{"id":fbid}, "message": message_object})
     
     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
-    status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg2)
+    #status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg2)
     
     pprint(status.json())
 
