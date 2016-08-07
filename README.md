@@ -51,3 +51,4 @@ heroku logs -t
 10) FAQs
 + `sudo pip install requests`
 + `heroku config:set DISABLE_COLLECTSTATIC=1`
++ `heroku git:remote -a {{YOUR heroku_app_id}}`
