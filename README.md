@@ -49,7 +49,8 @@ heroku ps:scale web=1
 heroku logs -t
 ```
 10) FAQs
-+ `sudo pip install requests`
-+ `heroku config:set DISABLE_COLLECTSTATIC=1`
-+ `heroku git:remote -a {{YOUR heroku_app_id}}`
-+ `heroku ps:scale web=0`
++ istall requests if you haven't `sudo pip install requests`
++ disable the static file directory flag `heroku config:set DISABLE_COLLECTSTATIC=1`
++ make sure your git tree has heroku as origin `heroku git:remote -a {{YOUR heroku_app_id}}`
++ Try shutting down the server and getting it back up again by `heroku ps:scale web=0` & `heroku ps:scale web=1` respectively.
++ Try opening this URL `https://{{your-heroku-app-id}}.herokuapp.com/facebook_auth?hub.verify_token={{your-webhook-verification-token}}&hub.challenge=12322`
